@@ -1,0 +1,61 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+
+{% block body %}
+<div class="col-md-8 col-sm-5 col-xs-5">
+<div id="content" class="p-6 p-md-5 pt-5">
+    <div class="col-md-12 col-sm-12 col-xs-10">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table text-primary"></i>
+                    Remplissez les informations de votre theme de memoire
+                </div>
+                <div class="card-body">
+               <form action="{% url 'aabook' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+        <div class="form-group">
+                <div class="col"><input type="text" class="form-control" name="title" placeholder="Titre" required="required"></div>
+        </div>
+        <div class="form-group">
+                <div class="col"><input type="text" class="form-control" name="author" placeholder="Etudiant" required="required"></div>                 
+        </div>
+
+         <div class="form-group">
+                <div class="col">
+                    <input type="text" class="form-control" name="departement" placeholder="Departement" required="required"></div>
+        </div>
+
+        <div class="form-group">
+            <div class="col"><input type="text" class="form-control" name="filiere" placeholder="filiere" required="required"></div>
+    </div>
+
+    <div class="form-group">
+        <div class="col"><input type="text" class="form-control" name="encadrant" placeholder="Encadrant" required="required"></div>
+</div>
+
+
+
+        <div class="form-group">
+                <div class="col"><input type="text" class="form-control" name="annee" placeholder="Annee de publication" required="required"></div>
+        </div>
+
+      
+
+
+       
+
+        <div class="form-group">
+            <button type="submit" class="btn btn btn-lg btn-block" href="" style="background:rgb(1,67,115); color:white">Ajouter</button>
+        </div>
+    </form>
+
+        </div>
+    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
